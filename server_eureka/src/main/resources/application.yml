@@ -1,0 +1,23 @@
+server:
+  port: 8555
+
+spring:
+  application:
+    name: Gateway
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        enabled: true
+        register: true
+        service-name: Gateway
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  health:
+    consul:
+      enabled: true
